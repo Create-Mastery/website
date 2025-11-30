@@ -8,7 +8,7 @@ Please follow these guidelines to make contributions smooth and clear.
 1. Clone this repository:
 
     ```bash
-    git clone https://github.com/USERNAME/create-mastery-website.git
+    git clone https://github.com/Create-Mastery/website.git create-mastery-website
     cd create-mastery-website
     ```
 
