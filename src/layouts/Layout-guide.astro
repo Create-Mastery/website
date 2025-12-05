@@ -15,7 +15,7 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="keywords" content="kinetic energy, Create, guide" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script
       src="https://kit.fontawesome.com/f0be53b175.js"
       crossorigin="anonymous"></script>
@@ -26,12 +26,19 @@ const { title, description } = Astro.props;
       class="p-0 m-0 h-fit items-center justify-center flex flex-col relative"
     >
       <div
-        class="bg-blue-300 flex sm:flex-row w-full px-7 py-4 gap-5 lg:justify-between justify-center items-center flex-col"
+        class="bg-blue-300 flex sm:flex-row w-full px-7 py-4 gap-5 lg:justify-start justify-center items-center"
       >
+        <img
+          src="/favicon.svg"
+          alt="Logo Create Mastery"
+          class="size-16 select-none object-contain"
+        />
+
         <span
-          class="sm:text-4xl text-4xl font-bold text-stone-900 select-none whitespace-nowrap"
-          >CREATE MASTERY</span
+          class="text-4xl font-bold text-stone-900 select-none whitespace-nowrap"
         >
+          CREATE MASTERY
+        </span>
       </div>
       <div
         class="px-4 w-full lg:justify-center justify-between h-fit items-center flex flex-row select-none bg-blue-200"
