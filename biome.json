@@ -1,0 +1,82 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "root": true,
+  "files": {
+    "includes": ["src/**/*{.ts,.tsx,css}"]
+  },
+  "linter": {
+    "enabled": true,
+    "includes": ["src/**/*{.ts,.tsx,css}"]
+  },
+  "formatter": {
+    "includes": ["src/**/*{.ts,.tsx,css}"],
+    "formatWithErrors": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "attributePosition": "multiline",
+    "bracketSpacing": true,
+    "expand": "always",
+    "useEditorconfig": true
+  },
+  "javascript": {
+    "parser": {
+      "jsxEverywhere": true
+    },
+    "formatter": {
+      "enabled": true,
+      "quoteStyle": "single",
+      "jsxQuoteStyle": "single",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "es5",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "always",
+      "indentWidth": 2,
+      "indentStyle": "space",
+      "lineEnding": "lf",
+      "lineWidth": 80,
+      "expand": "always",
+      "operatorLinebreak": "before"
+    },
+    "linter": {
+      "enabled": true
+    }
+  },
+  "css": {
+    "parser": {
+      "cssModules": true,
+      "tailwindDirectives": true
+    },
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineEnding": "lf",
+      "lineWidth": 80,
+      "quoteStyle": "single"
+    },
+    "linter": {
+      "enabled": true
+    },
+    "assist": {
+      "enabled": false
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*{.ts,.tsx,css}"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useConst": "off",
+            "useImportType": "off"
+          },
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
+        }
+      }
+    }
+  ]
+}
