@@ -42,9 +42,9 @@ export default function RootLayout({
 
             <nav className="my-auto -mr-1.5 flex items-center justify-center rounded-lg bg-stone-900 sm:mr-4">
               <ul className="flex flex-row items-center justify-center">
-                <li className={styles.navbar__link}>
-                  <Link href="/guide" className="pl-1">
-                    GUIDE
+                <li>
+                  <Link href="/guide" className={styles.navbar__link}>
+                    <span className="pl-1">GUIDE</span>
                   </Link>
                 </li>
                 <li>
