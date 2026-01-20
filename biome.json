@@ -2,14 +2,20 @@
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "root": true,
   "files": {
-    "includes": ["src/**/*{.ts,.tsx,css}"]
+    "includes": [
+      "src/**/*{.ts,.tsx,css}"
+    ]
   },
   "linter": {
     "enabled": true,
-    "includes": ["src/**/*{.ts,.tsx,css}"]
+    "includes": [
+      "src/**/*{.ts,.tsx,css}"
+    ]
   },
   "formatter": {
-    "includes": ["src/**/*{.ts,.tsx,css}"],
+    "includes": [
+      "src/**/*{.ts,.tsx,css}"
+    ],
     "formatWithErrors": true,
     "indentStyle": "space",
     "indentWidth": 2,
@@ -64,7 +70,9 @@
   },
   "overrides": [
     {
-      "includes": ["**/*{.ts,.tsx,css}"],
+      "includes": [
+        "**/*{.ts,.tsx,css}"
+      ],
       "linter": {
         "rules": {
           "style": {
