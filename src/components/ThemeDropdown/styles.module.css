@@ -1,13 +1,14 @@
 @reference 'tailwindcss';
 
 .themeDropdown__button {
-  @apply flex flex-row items-center justify-center text-xl font-semibold text-stone-900;
-  @apply rounded-md p-1 pl-3;
+  @apply flex flex-row items-center justify-center text-xl font-semibold text-blue-300;
+  @apply p-1 pl-3;
   @apply transition hover:cursor-pointer;
-  @apply hover:bg-stone-900 hover:text-blue-300;
-  @apply focus:bg-stone-900 focus:text-blue-300;
+  @apply hover:bg-blue-300 hover:text-stone-900;
+  @apply focus:bg-blue-300 focus:text-stone-900;
   @apply outline-none;
 }
+
 .themeDropdown__item {
   @apply flex flex-row justify-between gap-3 rounded-sm p-1 px-2 font-semibold transition;
   @apply hover:cursor-pointer hover:bg-stone-900 hover:text-blue-300 hover:outline-none;
