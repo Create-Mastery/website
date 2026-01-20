@@ -1,0 +1,19 @@
+@reference 'tailwindcss';
+
+.themeDropdown__button {
+  @apply flex flex-row items-center justify-center text-xl font-semibold text-stone-900;
+  @apply rounded-md p-1 pl-3;
+  @apply transition hover:cursor-pointer;
+  @apply hover:bg-stone-900 hover:text-blue-300;
+  @apply focus:bg-stone-900 focus:text-blue-300;
+  @apply outline-none;
+}
+.themeDropdown__item {
+  @apply flex flex-row justify-between gap-3 rounded-sm p-1 px-2 font-semibold transition;
+  @apply hover:cursor-pointer hover:bg-stone-900 hover:text-blue-300 hover:outline-none;
+  @apply focus:cursor-pointer focus:bg-stone-900 focus:text-blue-300 focus:outline-none;
+}
+
+.themeDropdown__button__icon__rotate {
+  transform: rotate(90deg);
+}
