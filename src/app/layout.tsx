@@ -44,7 +44,7 @@ export default function RootLayout({
               <ul className="flex flex-row items-center justify-center">
                 <li>
                   <Link href="/guide" className={styles.navbar__link}>
-                    <span className="pl-1">GUIDE</span>
+                    <span className="pl-0.5">GUIDE</span>
                   </Link>
                 </li>
                 <li>
