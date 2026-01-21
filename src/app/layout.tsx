@@ -1,68 +1,74 @@
-import type { Metadata } from "next";
-import "@/styles/globals.css";
-import Image from "next/image";
-import { ThemeProvider } from "next-themes";
-import Dropdown from "@/components/ThemeDropdown/Dropdown";
-import Link from "next/link";
-import styles from "@/styles/layout.module.css";
+import type { Metadata } from 'next'
+import '@/styles/globals.css'
+import Image from 'next/image'
+import Link from 'next/link'
+import { ThemeProvider } from 'next-themes'
+import CmLogo from '@/components/CreateMasteryLogo'
+import Dropdown from '@/components/ThemeDropdown/Dropdown'
+import styles from '@/styles/layout.module.css'
 
 export const metadata: Metadata = {
   title: {
-    default: "Create Mastery",
-    template: "%s | Create Mastery",
+    default: 'Create Mastery',
+    template: '%s | Create Mastery',
   },
-  description: "The official Create Mastery website",
-};
+  description: 'The official Create Mastery website',
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="flex min-h-screen flex-col">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <header className="flex flex-row justify-between bg-blue-300 p-2 text-stone-900 select-none">
+    <html
+      lang='en'
+      suppressHydrationWarning
+    >
+      <body className='flex min-h-screen flex-col'>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+        >
+          <header className='flex flex-row justify-between bg-blue-300 p-2 text-stone-900 select-none'>
             <Link
-              href="/"
-              className="flex flex-row items-center justify-center gap-2"
+              href='/'
+              className='flex flex-row items-center justify-center gap-2'
             >
-              <Image
-                src="/create-mastery-logo.svg"
-                alt="Create Mastery Logo"
-                width={70}
-                height={70}
-              />
+              <CmLogo dimension={'70px'} />
 
-              <span className="hidden text-5xl font-bold sm:inline">
+              <span className='hidden text-5xl font-bold sm:inline'>
                 CREATE MASTERY
               </span>
             </Link>
 
-            <nav className="my-auto -mr-1.5 flex items-center justify-center rounded-lg bg-stone-900 sm:mr-4">
-              <ul className="flex flex-row items-center justify-center">
+            <nav className='-mr-1.5 flex items-center justify-center sm:mr-4'>
+              <ul className='flex flex-row items-center justify-center gap-2'>
                 <li>
-                  <Link href="/guide" className={styles.navbar__link}>
-                    <span className="pl-0.5">GUIDE</span>
+                  <Link
+                    href='/guide'
+                    className={styles.navbar__link}
+                  >
+                    <span className='pl-0.5'>GUIDE</span>
                   </Link>
                 </li>
                 <li>
                   <a
-                    href="https://github.com/SCSDC-co"
+                    href='https://github.com/SCSDC-co'
                     className={styles.navbar__link}
-                    rel="noopener noreferrer"
-                    target="_blank"
+                    rel='noopener noreferrer'
+                    target='_blank'
                   >
                     SCSDC
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://www.curseforge.com/minecraft/mc-mods/create"
+                    href='https://www.curseforge.com/minecraft/mc-mods/create'
                     className={styles.navbar__link}
-                    rel="noopener noreferrer"
-                    target="_blank"
+                    rel='noopener noreferrer'
+                    target='_blank'
                   >
                     DOWNLOAD
                   </a>
@@ -74,11 +80,11 @@ export default function RootLayout({
             </nav>
           </header>
 
-          <main className="flex-1 bg-stone-100 dark:bg-stone-900">
+          <main className='flex-1 bg-stone-100 dark:bg-stone-900'>
             {children}
           </main>
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
