@@ -2,9 +2,9 @@
 
 .navbar__link {
   @apply flex flex-row items-center justify-center text-xl font-semibold text-stone-900;
-  @apply h-full p-1 px-2 pr-3 rounded-xl;
+  @apply h-full rounded-xl p-1 px-2 pr-3;
   @apply transition hover:cursor-pointer;
-  @apply hover:text-blue-300 hover:bg-stone-900;
-  @apply focus:text-blue-300 focus:bg-stone-900;
+  @apply hover:bg-stone-900 hover:text-blue-300;
+  @apply focus:bg-stone-900 focus:text-blue-300;
   @apply outline-none;
 }
