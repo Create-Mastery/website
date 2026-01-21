@@ -30,7 +30,7 @@ export default function RootLayout({
           defaultTheme='system'
           enableSystem
         >
-          <header className='flex flex-row justify-between bg-blue-300 p-2 text-stone-900 select-none'>
+          <header className='flex flex-row justify-between bg-blue-400 p-2 text-stone-100 select-none dark:bg-blue-300 dark:text-stone-900'>
             <Link
               href='/'
               className='flex flex-row items-center justify-center gap-2'

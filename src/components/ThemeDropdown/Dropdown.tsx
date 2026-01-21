@@ -33,7 +33,7 @@ const Dropdown = () => {
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Content
-        className='rounded-b-md bg-blue-300 p-2'
+        className='rounded-b-md bg-blue-400 p-2 dark:bg-blue-300'
         loop
       >
         <DropdownMenu.Item

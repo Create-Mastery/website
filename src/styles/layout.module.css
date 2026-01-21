@@ -1,10 +1,14 @@
 @reference 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 .navbar__link {
-  @apply flex flex-row items-center justify-center text-xl font-semibold text-stone-900;
+  @apply flex flex-row items-center justify-center text-xl font-semibold;
   @apply h-full rounded-xl p-1 px-2 pr-3;
   @apply transition hover:cursor-pointer;
-  @apply hover:bg-stone-900 hover:text-blue-300;
-  @apply focus:bg-stone-900 focus:text-blue-300;
+  @apply focus:bg-stone-100 focus:text-blue-400;
+  @apply hover:bg-stone-100 hover:text-blue-400;
+  @apply dark:hover:bg-stone-900 dark:hover:text-blue-300;
+  @apply dark:focus:bg-stone-900 dark:focus:text-blue-300;
   @apply outline-none;
 }
