@@ -4,7 +4,8 @@ import Link from 'next/link'
 import { ThemeProvider } from 'next-themes'
 import CmLogo from '@/components/CreateMasteryLogo'
 import Dropdown from '@/components/ThemeDropdown/Dropdown'
-import styles from '@/styles/layout.module.css'
+import InternalLink from '@/components/Navbar/InternalLink'
+import ExternalLink from '@/components/Navbar/ExternalLink'
 
 export const metadata: Metadata = {
   title: {
@@ -45,32 +46,19 @@ export default function RootLayout({
             <nav className='-mr-1.5 flex items-center justify-center sm:mr-4'>
               <ul className='flex flex-row items-center justify-center gap-2'>
                 <li>
-                  <Link
-                    href='/guide'
-                    className={styles.navbar__link}
-                  >
+                  <ExternalLink link='/guide'>
                     <span className='pl-0.5'>GUIDE</span>
-                  </Link>
+                  </ExternalLink>
                 </li>
                 <li>
-                  <a
-                    href='https://github.com/SCSDC-co'
-                    className={styles.navbar__link}
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
+                  <InternalLink link='https://github.com/SCSDC-co'>
                     SCSDC
-                  </a>
+                  </InternalLink>
                 </li>
                 <li>
-                  <a
-                    href='https://www.curseforge.com/minecraft/mc-mods/create'
-                    className={styles.navbar__link}
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
+                  <InternalLink link='https://www.curseforge.com/minecraft/mc-mods/create'>
                     DOWNLOAD
-                  </a>
+                  </InternalLink>
                 </li>
                 <li>
                   <Dropdown />

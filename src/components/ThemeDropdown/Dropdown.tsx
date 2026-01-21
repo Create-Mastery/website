@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react'
 import { useTheme } from 'next-themes'
 import { DropdownMenu } from 'radix-ui'
 import { useState } from 'react'
-import styles from './styles.module.css'
+import './styles.module.css'
 
 const Dropdown = () => {
   const [rotate, setOpen] = useState(false)
@@ -14,7 +14,13 @@ const Dropdown = () => {
     <DropdownMenu.Root onOpenChange={setOpen}>
       <DropdownMenu.Trigger asChild>
         <button
-          className={styles.themeDropdown__button}
+          className='
+            flex flex-row items-center justify-center text-xl font-semibold
+            rounded-xl p-1 pl-3 transition hover:cursor-pointer hover:bg-stone-100
+            hover:text-blue-400 focus:bg-stone-100 focus:text-blue-400
+            dark:hover:bg-stone-900 dark:hover:text-blue-300
+            dark:focus:bg-stone-900 dark:focus:text-blue-300 outline-none
+          '
           aria-label='Theme Dropdown'
           type='button'
         >
@@ -23,11 +29,8 @@ const Dropdown = () => {
             icon='lucide:chevron-right'
             width='28'
             height='28'
-            className={
-              rotate
-                ? `${styles.themeDropdown__button__icon__rotate} transition-all`
-                : 'transition-all'
-            }
+            id={rotate ? 'themeDropdown__button__icon__rotate' : ''}
+            className='transition-all'
           />
         </button>
       </DropdownMenu.Trigger>
@@ -37,7 +40,14 @@ const Dropdown = () => {
         loop
       >
         <DropdownMenu.Item
-          className={styles.themeDropdown__item}
+          className='
+            flex flex-row justify-between gap-3 rounded-sm p-1 px-2 font-semibold transition
+            hover:cursor-pointer hover:bg-stone-100 hover:text-blue-400
+            focus:cursor-pointer focus:bg-stone-100 focus:text-blue-400
+            dark:hover:bg-stone-900 dark:hover:text-blue-300
+            dark:focus:bg-stone-900 dark:focus:text-blue-300
+            outline-none
+          '
           onClick={() => setTheme('dark')}
         >
           DARK
@@ -48,7 +58,14 @@ const Dropdown = () => {
           />
         </DropdownMenu.Item>
         <DropdownMenu.Item
-          className={styles.themeDropdown__item}
+          className='
+            flex flex-row justify-between gap-3 rounded-sm p-1 px-2 font-semibold transition
+            hover:cursor-pointer hover:bg-stone-100 hover:text-blue-400
+            focus:cursor-pointer focus:bg-stone-100 focus:text-blue-400
+            dark:hover:bg-stone-900 dark:hover:text-blue-300
+            dark:focus:bg-stone-900 dark:focus:text-blue-300
+            outline-none
+          '
           onClick={() => setTheme('light')}
         >
           LIGHT
@@ -59,7 +76,14 @@ const Dropdown = () => {
           />
         </DropdownMenu.Item>
         <DropdownMenu.Item
-          className={styles.themeDropdown__item}
+          className='
+            flex flex-row justify-between gap-3 rounded-sm p-1 px-2 font-semibold transition
+            hover:cursor-pointer hover:bg-stone-100 hover:text-blue-400
+            focus:cursor-pointer focus:bg-stone-100 focus:text-blue-400
+            dark:hover:bg-stone-900 dark:hover:text-blue-300
+            dark:focus:bg-stone-900 dark:focus:text-blue-300
+            outline-none
+          '
           onClick={() => setTheme('system')}
         >
           SYSTEM
