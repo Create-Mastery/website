@@ -46,19 +46,19 @@ export default function RootLayout({
             <nav className='-mr-1.5 flex items-center justify-center sm:mr-4'>
               <ul className='flex flex-row items-center justify-center gap-2'>
                 <li>
-                  <ExternalLink link='/guide'>
+                  <InternalLink link='/guide'>
                     <span className='pl-0.5'>GUIDE</span>
+                  </InternalLink>
+                </li>
+                <li>
+                  <ExternalLink link='https://github.com/SCSDC-co'>
+                    SCSDC
                   </ExternalLink>
                 </li>
                 <li>
-                  <InternalLink link='https://github.com/SCSDC-co'>
-                    SCSDC
-                  </InternalLink>
-                </li>
-                <li>
-                  <InternalLink link='https://www.curseforge.com/minecraft/mc-mods/create'>
+                  <ExternalLink link='https://www.curseforge.com/minecraft/mc-mods/create'>
                     DOWNLOAD
-                  </InternalLink>
+                  </ExternalLink>
                 </li>
                 <li>
                   <Dropdown />
