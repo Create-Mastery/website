@@ -3,9 +3,9 @@ import '@/styles/globals.css'
 import Link from 'next/link'
 import { ThemeProvider } from 'next-themes'
 import CmLogo from '@/components/CreateMasteryLogo'
-import Dropdown from '@/components/ThemeDropdown/Dropdown'
-import InternalLink from '@/components/Navbar/InternalLink'
 import ExternalLink from '@/components/Navbar/ExternalLink'
+import InternalLink from '@/components/Navbar/InternalLink'
+import Dropdown from '@/components/ThemeDropdown/Dropdown'
 
 export const metadata: Metadata = {
   title: {
