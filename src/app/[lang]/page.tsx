@@ -9,7 +9,7 @@ export default async function page(props: {
   const { lang } = await props.params
   const dictionary = await getDictionary(lang)
 
-  const hero = dictionary.hero // I'm to lazy to write dictionary.hero
+  const hero = dictionary.hero // I'm too lazy to write dictionary.hero
 
   return (
     <section className='flex h-full w-full items-center justify-center'>
