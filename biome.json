@@ -3,18 +3,21 @@
   "root": true,
   "files": {
     "includes": [
-      "src/**/*{.ts,.tsx,css}"
+      "src/**/*{.ts,.tsx,css}",
+      "cli/**/*{.ts}"
     ]
   },
   "linter": {
     "enabled": true,
     "includes": [
-      "src/**/*{.ts,.tsx,css}"
+      "src/**/*{.ts,.tsx,css}",
+      "cli/**/*{.ts}"
     ]
   },
   "formatter": {
     "includes": [
-      "src/**/*{.ts,.tsx,css}"
+      "src/**/*{.ts,.tsx,css}",
+      "cli/**/*{.ts}"
     ],
     "formatWithErrors": true,
     "indentStyle": "space",
