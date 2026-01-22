@@ -46,7 +46,7 @@ export default async function Root(props: {
         >
           <header className='flex flex-row justify-between bg-blue-400 p-2 text-stone-100 select-none dark:bg-blue-300 dark:text-stone-900'>
             <Link
-              href='/'
+              href={`/${params.lang}`}
               className='flex flex-row items-center justify-center gap-2'
             >
               <CmLogo dimension={'70px'} />
@@ -56,7 +56,10 @@ export default async function Root(props: {
               </span>
             </Link>
 
-            <Navbar dictionary={dictionary.navbar} />
+            <Navbar
+              lang={params.lang}
+              dictionary={dictionary.navbar}
+            />
           </header>
 
           <main className='flex-1 bg-stone-100 dark:bg-stone-900'>
