@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url'
 import chalk from 'chalk'
 import { globSync } from 'glob'
 import siteInfo from '../../package.json'
+import { createMasteryASCIIArt } from '../utils/art'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -16,12 +17,6 @@ export default function printVersion(verbose: boolean) {
 
   let languages: number = getLanguages()
   let guides: number = globSync(`${guideDirectory}/**/*.tsx`).length
-
-  const createMasteryASCIIArt: string = `
-┏━╸┏━┓┏━╸┏━┓╺┳╸┏━╸   ┏┳┓┏━┓┏━┓╺┳╸┏━╸┏━┓╻ ╻
-┃  ┣┳┛┣╸ ┣━┫ ┃ ┣╸    ┃┃┃┣━┫┗━┓ ┃ ┣╸ ┣┳┛┗┳┛
-┗━╸╹┗╸┗━╸╹ ╹ ╹ ┗━╸   ╹ ╹╹ ╹┗━┛ ╹ ┗━╸╹┗╸ ╹
-──────────────────────────────────────────`
 
   console.log(chalk.blue(createMasteryASCIIArt))
   console.log(chalk.blue('VERSION   ─'), chalk.reset(siteInfo.version))
