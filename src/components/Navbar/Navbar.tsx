@@ -1,7 +1,7 @@
 import Dropdown from '@/components/ThemeDropdown/Dropdown'
+import { type getDictionary } from '@/i18n/get-dictionaries'
 import ExternalLink from './ExternalLink'
 import InternalLink from './InternalLink'
-import { type getDictionary } from '@/i18n/get-dictionaries'
 
 const Navbar = ({
   dictionary,

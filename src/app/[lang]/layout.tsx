@@ -3,8 +3,8 @@ import '@/styles/globals.css'
 import Link from 'next/link'
 import { ThemeProvider } from 'next-themes'
 import CmLogo from '@/components/CreateMasteryLogo'
-import { i18n, type Locale } from '@/i18n/config'
 import Navbar from '@/components/Navbar/Navbar'
+import { i18n, type Locale } from '@/i18n/config'
 import { getDictionary } from '@/i18n/get-dictionaries'
 
 export async function generateStaticParams() {

@@ -5,7 +5,10 @@
     "includes": [
       "src/**/*{.ts,.tsx,css}",
       "cli/**/*{.ts}",
-      "**/*{.ts}"
+      "**/*{.ts}",
+      "!node_modules/**/*",
+      "!.next/**/*",
+      "!.git/**/*"
     ]
   },
   "linter": {
@@ -13,14 +16,20 @@
     "includes": [
       "src/**/*{.ts,.tsx,css}",
       "cli/**/*{.ts}",
-      "**/*{.ts}"
+      "**/*{.ts}",
+      "!node_modules/**/*",
+      "!.next/**/*",
+      "!.git/**/*"
     ]
   },
   "formatter": {
     "includes": [
       "src/**/*{.ts,.tsx,css}",
       "cli/**/*{.ts}",
-      "**/*{.ts}"
+      "**/*{.ts}",
+      "!node_modules/**/*",
+      "!.next/**/*",
+      "!.git/**/*"
     ],
     "formatWithErrors": true,
     "indentStyle": "space",

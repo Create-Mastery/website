@@ -4,8 +4,8 @@ import { Icon } from '@iconify/react'
 import { useTheme } from 'next-themes'
 import { DropdownMenu } from 'radix-ui'
 import { useState } from 'react'
-import styles from './styles.module.css'
 import { getDictionary } from '@/i18n/get-dictionaries'
+import styles from './styles.module.css'
 
 const Dropdown = ({
   dictionary,
