@@ -15,7 +15,7 @@ const Navbar = ({
     <nav className='-mr-1.5 flex items-center justify-center sm:mr-4'>
       <ul className='flex flex-row items-center justify-center gap-2'>
         <li>
-          <InternalLink link={`/${lang}guide`}>
+          <InternalLink link={`/${lang}/guide`}>
             <span className='pl-0.5'>{dictionary.guide}</span>
           </InternalLink>
         </li>
