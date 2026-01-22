@@ -1,5 +1,21 @@
-const page = () => {
-  return <h1>HOME PAGE</h1>
-}
+import { Locale } from '@/i18n/config'
+import { getDictionary } from '@/i18n/get-dictionaries'
 
-export default page
+export default async function page(props: {
+  params: Promise<{
+    lang: Locale
+  }>
+}) {
+  const { lang } = await props.params
+  const dictionary = await getDictionary(lang)
+
+  const hero = dictionary.hero // I'm to lazy to write dictionary.hero
+
+  return (
+    <section className='flex h-full w-full items-center justify-center'>
+      <h1 className='text-2xl font-bold text-blue-400 dark:text-blue-300'>
+        {hero.title}
+      </h1>
+    </section>
+  )
+}
