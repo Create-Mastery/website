@@ -10,8 +10,9 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 export default function printVersion(verbose: boolean) {
-  const guideDirectory = path.resolve(__dirname, '../../src/app/guide')
-  const getLanguages = () => fs.readdirSync(guideDirectory).length
+  const dictionarieDir = path.resolve(__dirname, '../../src/i18n/dictionaries')
+  const guideDirectory = path.resolve(__dirname, '../../src/app/**/guide')
+  const getLanguages = () => fs.readdirSync(dictionarieDir).length
   const deps = Object.keys(siteInfo.dependencies).length
   const devDeps = Object.keys(siteInfo.devDependencies).length
 

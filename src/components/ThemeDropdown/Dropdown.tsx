@@ -5,8 +5,13 @@ import { useTheme } from 'next-themes'
 import { DropdownMenu } from 'radix-ui'
 import { useState } from 'react'
 import styles from './styles.module.css'
+import { getDictionary } from '@/i18n/get-dictionaries'
 
-const Dropdown = () => {
+const Dropdown = ({
+  dictionary,
+}: {
+  dictionary: Awaited<ReturnType<typeof getDictionary>>['navbar']['theme']
+}) => {
   const [rotate, setOpen] = useState(false)
   const { setTheme } = useTheme()
 
@@ -24,7 +29,7 @@ const Dropdown = () => {
           aria-label='Theme Dropdown'
           type='button'
         >
-          THEME
+          {dictionary.title}
           <Icon
             icon='lucide:chevron-right'
             width='28'
@@ -50,7 +55,7 @@ const Dropdown = () => {
           '
           onClick={() => setTheme('dark')}
         >
-          DARK
+          {dictionary.dark}
           <Icon
             icon='lucide:moon'
             width='24'
@@ -68,7 +73,7 @@ const Dropdown = () => {
           '
           onClick={() => setTheme('light')}
         >
-          LIGHT
+          {dictionary.light}
           <Icon
             icon='lucide:sun-medium'
             width='24'
@@ -86,7 +91,7 @@ const Dropdown = () => {
           '
           onClick={() => setTheme('system')}
         >
-          SYSTEM
+          {dictionary.system}
           <Icon
             icon='lucide:monitor'
             width='24'

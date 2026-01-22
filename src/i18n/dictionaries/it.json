@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "guide": "GUIDA",
+    "downlad": "SCARICA LA MOD",
+    "theme": {
+      "title": "TEMA",
+      "dark": "SCURO",
+      "light": "CHIARO",
+      "system": "SISTEMA"
+    }
+  },
+  "hero": {
+    "title": "Mastera l'arte della Create mod in Minecraft"
+  }
+}

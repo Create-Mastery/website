@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "guide": "GUIDE",
+    "downlad": "DOWNLOAD THE MOD",
+    "theme": {
+      "title": "THEME",
+      "dark": "DARK",
+      "light": "LIGHT",
+      "system": "SYSTEM"
+    }
+  },
+  "hero": {
+    "title": "Master the art of Create in Minecraft"
+  }
+}

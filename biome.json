@@ -4,20 +4,23 @@
   "files": {
     "includes": [
       "src/**/*{.ts,.tsx,css}",
-      "cli/**/*{.ts}"
+      "cli/**/*{.ts}",
+      "**/*{.ts}"
     ]
   },
   "linter": {
     "enabled": true,
     "includes": [
       "src/**/*{.ts,.tsx,css}",
-      "cli/**/*{.ts}"
+      "cli/**/*{.ts}",
+      "**/*{.ts}"
     ]
   },
   "formatter": {
     "includes": [
       "src/**/*{.ts,.tsx,css}",
-      "cli/**/*{.ts}"
+      "cli/**/*{.ts}",
+      "**/*{.ts}"
     ],
     "formatWithErrors": true,
     "indentStyle": "space",
