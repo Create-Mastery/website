@@ -51,7 +51,7 @@ export default async function Root(props: {
             >
               <CmLogo dimension={'70px'} />
 
-              <span className='hidden text-5xl font-bold sm:inline'>
+              <span className='hidden text-3xl font-bold sm:inline xl:text-5xl'>
                 CREATE MASTERY
               </span>
             </Link>
