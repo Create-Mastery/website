@@ -2,6 +2,13 @@
   "name": "create-mastery-website",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://createmastery.org",
+  "license": "GPL 3.0",
+  "author": "Create Mastery",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Create-Mastery/website.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -31,5 +38,13 @@
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
     "typescript": "^5"
-  }
+  },
+  "keywords": [
+    "create mod",
+    "minecraft",
+    "nextjs",
+    "react",
+    "i18n",
+    "cli"
+  ]
 }
