@@ -29,14 +29,14 @@ const Navbar = ({
             </li>
             <li>
               <ExternalLink link='https://www.curseforge.com/minecraft/mc-mods/create'>
-                {dictionary.downlad}
+                <span className='pr-px pl-1'>{dictionary.downlad}</span>
               </ExternalLink>
             </li>
           </div>
           <div className='flex flex-row gap-2'>
             <li>
               <ExternalLink link='https://github.com/SCSDC-co'>
-                SCSDC
+                <span className='pr-px pl-1'>SCSDC</span>
               </ExternalLink>
             </li>
             <li>
