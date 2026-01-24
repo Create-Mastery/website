@@ -1,5 +1,6 @@
 'use client'
 
+import { roboto } from '@/fonts'
 import { Locale } from '@/i18n/config'
 import { type getDictionary } from '@/i18n/get-dictionaries'
 import ExternalLink from './ExternalLink'
@@ -16,7 +17,9 @@ const Navbar = ({
 }) => {
   return (
     <>
-      <nav className='mr-4 hidden items-center justify-center sm:-mr-1.5 sm:flex'>
+      <nav
+        className={`${roboto.className} mr-4 hidden items-center justify-center sm:-mr-1.5 sm:flex`}
+      >
         <ul className='flex flex-col items-end justify-center gap-2 xl:flex-row xl:items-center'>
           <div className='flex flex-row gap-2'>
             <li>

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ThemeProvider } from 'next-themes'
 import CmLogo from '@/components/CreateMasteryLogo'
 import Navbar from '@/components/Navbar/Navbar'
+import { roboto } from '@/fonts'
 import { i18n, type Locale } from '@/i18n/config'
 import { getDictionary } from '@/i18n/get-dictionaries'
 
@@ -51,7 +52,9 @@ export default async function Root(props: {
             >
               <CmLogo dimension={'70px'} />
 
-              <span className='hidden text-3xl font-bold sm:inline xl:text-5xl'>
+              <span
+                className={`${roboto.className} hidden text-3xl font-bold sm:inline xl:text-5xl`}
+              >
                 CREATE MASTERY
               </span>
             </Link>

@@ -1,6 +1,6 @@
 import localFont from 'next/font/local'
 
-export const inter = localFont({
+export const roboto = localFont({
   src: [
     {
       path: './roboto/woff2/Roboto-Regular.woff2',
@@ -8,14 +8,14 @@ export const inter = localFont({
       style: 'normal',
     },
     {
-      path: './roboto/woff2/Roboto-BoldItalic.woff2',
+      path: './roboto/woff2/Roboto-Bold.woff2',
       weight: '700',
-      style: 'italic',
+      style: 'normal',
     },
   ],
 })
 
-export const interCondensed = localFont({
+export const robotoCondensed = localFont({
   src: [
     {
       path: './roboto-condensed/woff2/RobotoCondensed-Regular.woff2',
