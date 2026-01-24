@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "homepage": "https://createmastery.org",
-  "license": "GPL 3.0",
+  "license": "GPL-3.0-only",
   "author": "Create Mastery",
   "repository": {
     "type": "git",
@@ -40,8 +40,10 @@
     "typescript": "^5"
   },
   "keywords": [
+    "tailwindcss",
     "create mod",
     "minecraft",
+    "radix-ui",
     "nextjs",
     "react",
     "i18n",
