@@ -12,6 +12,11 @@ export const roboto = localFont({
       weight: '700',
       style: 'normal',
     },
+    {
+      path: './roboto/woff2/Roboto-ExtraBold.woff2',
+      weight: '800',
+      style: 'normal',
+    },
   ],
 })
 

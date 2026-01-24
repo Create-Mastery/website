@@ -53,7 +53,7 @@ export default async function Root(props: {
               <CmLogo dimension={'70px'} />
 
               <span
-                className={`${roboto.className} hidden text-3xl font-bold sm:inline xl:text-5xl`}
+                className={`${roboto.className} hidden text-3xl font-extrabold sm:inline xl:text-5xl`}
               >
                 CREATE MASTERY
               </span>
