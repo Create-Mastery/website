@@ -1,7 +1,7 @@
 import { Locale } from '@/i18n/config'
 import { getDictionary } from '@/i18n/get-dictionaries'
 import '@/styles/index.css'
-import LinkHero from '@/components/Link'
+import LinkHero from '@/components/LinkHero'
 import { robotoCondensed } from '@/fonts'
 
 export default async function page(props: {
