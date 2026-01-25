@@ -34,14 +34,14 @@ export default async function page(props: {
           external={false}
           fill={true}
         >
-          {hero.cta['get-started']}
+          {hero.cta.getStarted}
         </LinkHero>
         <LinkHero
           link='https://discord.gg/RVX6RRqkt5'
           external={true}
           fill={false}
         >
-          {hero.cta['join-community']}
+          {hero.cta.joinCommunity}
         </LinkHero>
       </div>
     </section>
