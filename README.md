@@ -8,17 +8,23 @@ The official website of Create Mastery
 
 </div>
 
-## CLI
+## Create Mastery CLI
 
-The Create Mastery website has a CLI (still WIP) that you can use for developing the website
+The Create Mastery website comes with a CLI (currently under development) to help with website development.
 
-For making the CLI runnable just run these commands:
+### Getting Started
+
+To make the CLI runnable, run the following commands:
 
 ```sh
-npm install -g tsx # you need to have tsx installed globally for using the CLI
-npm link # this creates the executable that you can run
+# Install tsx globally (required to run the CLI)
+npm install -g tsx
 
-cm version # now you can run the CLI!
+# Link the CLI locally
+npm link
+
+# Test it!
+cm version
 ```
 
 ## License
