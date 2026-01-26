@@ -10,7 +10,7 @@ type Props = {
 
 const ImageCard = (props: Props) => {
   return (
-    <div className='rounded-xl border-2 border-blue-300 bg-stone-950 p-2'>
+    <div className='rounded-xl border-2 border-blue-400 bg-stone-200 p-2 dark:border-blue-300 dark:bg-stone-950'>
       <div className='flex justify-center'>
         <Image
           src={props.src}
@@ -20,8 +20,8 @@ const ImageCard = (props: Props) => {
           className='rounded-md'
         />
       </div>
-      <hr className='mt-2 h-px border-none bg-blue-300' />
-      <span className='text-blue-300'>{props.children}</span>
+      <hr className='mt-2 h-px border-none bg-blue-400 dark:bg-blue-300' />
+      <span className='text-blue-400 dark:text-blue-300'>{props.children}</span>
     </div>
   )
 }

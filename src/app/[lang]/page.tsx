@@ -68,13 +68,13 @@ export default async function page(props: {
         </div>
       </section>
 
-      <hr className='my-6 h-px w-full border-none bg-blue-300' />
+      <hr className='my-6 h-px w-full border-none bg-blue-400 dark:bg-blue-300' />
 
       <section className='mb-6 flex h-full w-full flex-col-reverse items-stretch justify-center gap-6 px-2 md:flex-row xl:w-3/5 xl:px-0'>
         <div className='flex flex-col items-start justify-between gap-6 text-start md:items-end md:text-end xl:gap-0'>
           <div>
             <h2
-              className={`${roboto.className} text-4xl font-bold text-blue-300`}
+              className={`${roboto.className} text-4xl font-bold text-blue-400 dark:text-blue-300`}
             >
               {engagement.discord.title}
             </h2>
@@ -111,7 +111,7 @@ export default async function page(props: {
         <div className='flex flex-col items-start justify-between gap-6 text-start xl:gap-0'>
           <div>
             <h2
-              className={`${roboto.className} text-4xl font-bold text-blue-300`}
+              className={`${roboto.className} text-4xl font-bold text-blue-400 dark:text-blue-300`}
             >
               {engagement.guide.title}
             </h2>
