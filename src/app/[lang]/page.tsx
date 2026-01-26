@@ -70,8 +70,8 @@ export default async function page(props: {
 
       <hr className='my-6 h-px w-full border-none bg-blue-300' />
 
-      <section className='mb-6 flex h-full w-full flex-col-reverse items-stretch justify-center gap-6 px-2 xl:w-3/5 xl:flex-row xl:px-0'>
-        <div className='flex flex-col items-start justify-between gap-6 text-start xl:items-end xl:gap-0 xl:text-end'>
+      <section className='mb-6 flex h-full w-full flex-col-reverse items-stretch justify-center gap-6 px-2 md:flex-row xl:w-3/5 xl:px-0'>
+        <div className='flex flex-col items-start justify-between gap-6 text-start md:items-end md:text-end xl:gap-0'>
           <div>
             <h2
               className={`${roboto.className} text-4xl font-bold text-blue-300`}
@@ -107,7 +107,7 @@ export default async function page(props: {
         </ImageCard>
       </section>
 
-      <section className='mb-6 flex h-full w-full flex-col-reverse items-stretch justify-center gap-6 px-2 xl:w-3/5 xl:flex-row-reverse xl:px-0'>
+      <section className='mb-6 flex h-full w-full flex-col-reverse items-stretch justify-center gap-6 px-2 md:flex-row-reverse xl:w-3/5 xl:px-0'>
         <div className='flex flex-col items-start justify-between gap-6 text-start xl:gap-0'>
           <div>
             <h2
