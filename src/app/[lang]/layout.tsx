@@ -48,7 +48,7 @@ export default async function Root(props: {
           <header className='flex flex-row justify-between bg-blue-400 p-2 text-stone-100 select-none dark:bg-blue-300 dark:text-stone-900'>
             <Link
               href={`/${params.lang}`}
-              className='flex flex-row items-center justify-center gap-2'
+              className='flex flex-row items-center justify-center gap-2 outline-none focus:underline'
             >
               <CmLogo dimension={'70px'} />
 
