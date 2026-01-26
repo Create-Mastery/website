@@ -5,7 +5,7 @@ import siteInfo from '../package.json'
 import printScripts from './commands/scripts'
 import printVersion from './commands/version'
 
-program.version(siteInfo.version, '-v, --version')
+program.version(siteInfo.version)
 program.name('cm')
 
 program
