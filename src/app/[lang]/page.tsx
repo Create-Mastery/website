@@ -1,9 +1,9 @@
 import { Locale } from '@/i18n/config'
 import { getDictionary } from '@/i18n/get-dictionaries'
 import '@/styles/index.css'
-import LinkHero from '@/components/LinkHero'
-import { robotoCondensed } from '@/fonts'
 import ImageCard from '@/components/ImageCard'
+import LinkHero from '@/components/LinkHero'
+import { roboto, robotoCondensed } from '@/fonts'
 
 export default async function page(props: {
   params: Promise<{
@@ -56,7 +56,7 @@ export default async function page(props: {
           <a
             href='https://www.youtube.com/watch?v=rR8W-f9YhYA'
             rel='noopner noreferrer'
-            className='mt-2 flex w-full items-center justify-center hover:underline'
+            className={`${roboto.className} mt-2 flex w-full items-center justify-center hover:underline`}
             target='_blank'
           >
             This is Create
