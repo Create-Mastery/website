@@ -1,3 +1,5 @@
+#!/usr/bin/env tsx
+
 import { program } from 'commander'
 import siteInfo from '../package.json'
 import printScripts from './commands/scripts'
