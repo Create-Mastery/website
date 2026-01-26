@@ -1,25 +1,25 @@
 import Link from 'next/link'
 import { roboto } from '@/fonts'
 
-type LinkHeroProps = {
+type Props = {
   children: React.ReactNode
   link: string
   external: boolean
   fill: boolean
 }
 
-export default function LinkHero(props: LinkHeroProps) {
+const LinkHero = (props: Props) => {
   const classes = props.fill
     ? `
       ${roboto.className}
       rounded-xl border-2 border-blue-300 bg-blue-300 p-3 px-4
-      text-2xl font-bold text-stone-900 transition
+      lg:text-2xl font-bold text-stone-900 transition
       hover:cursor-pointer hover:bg-stone-900 hover:text-blue-300
     `
     : `
       ${roboto.className}
       rounded-xl border-2 border-blue-300 bg-stone-900 p-3 px-4
-      text-2xl font-bold text-blue-300 transition
+      lg:text-2xl font-bold text-blue-300 transition
       hover:cursor-pointer hover:bg-blue-300 hover:text-stone-900
     `
 
@@ -41,3 +41,5 @@ export default function LinkHero(props: LinkHeroProps) {
     </Link>
   )
 }
+
+export default LinkHero

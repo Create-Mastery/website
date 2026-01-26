@@ -3,6 +3,7 @@ import { getDictionary } from '@/i18n/get-dictionaries'
 import '@/styles/index.css'
 import LinkHero from '@/components/LinkHero'
 import { robotoCondensed } from '@/fonts'
+import ImageCard from '@/components/ImageCard'
 
 export default async function page(props: {
   params: Promise<{
@@ -15,7 +16,7 @@ export default async function page(props: {
   const hero = dictionary.hero // I'm too lazy to write dictionary.hero
 
   return (
-    <section className='flex h-full w-full flex-col items-center justify-center gap-6'>
+    <section className='mb-6 flex h-full w-full flex-col items-center justify-center gap-6'>
       <span className='mx-3 mt-6 flex flex-col items-center justify-center gap-7 text-blue-400 sm:mx-0 dark:text-blue-300'>
         <h1
           className={`${robotoCondensed.className} quote text-center text-3xl font-bold italic md:text-4xl lg:text-5xl xl:text-6xl`}
@@ -28,7 +29,7 @@ export default async function page(props: {
         </span>
       </span>
 
-      <div className='flex flex-row gap-6'>
+      <div className='mx-2 flex flex-row gap-6 lg:mx-0'>
         <LinkHero
           link={`/${lang}/guide`}
           external={false}
@@ -43,6 +44,24 @@ export default async function page(props: {
         >
           {hero.cta.joinCommunity}
         </LinkHero>
+      </div>
+
+      <div className='mx-2 lg:mx-0'>
+        <ImageCard
+          src='/index/hero.jpg'
+          alt='This is Create'
+          width={960}
+          height={540}
+        >
+          <a
+            href='https://www.youtube.com/watch?v=rR8W-f9YhYA'
+            rel='noopner noreferrer'
+            className='mt-2 flex w-full items-center justify-center hover:underline'
+            target='_blank'
+          >
+            This is Create
+          </a>
+        </ImageCard>
       </div>
     </section>
   )
