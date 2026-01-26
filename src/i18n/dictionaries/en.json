@@ -16,5 +16,19 @@
       "getStarted": "GET STARTED",
       "joinCommunity": "JOIN THE COMMUNITY"
     }
+  },
+  "engagement": {
+    "discord": {
+      "title": "Join our Discord",
+      "paragraph": "Be part of our community — share ideas, showcase your builds, and chat with other creators. Click below to join the fun",
+      "imageText": "Join the Discord Server",
+      "cta": "JOIN THE COMMUNITY"
+    },
+    "guide": {
+      "title": "Master the Power of the Create Mod",
+      "paragraph": "Don’t just skim the basics — dive into the full guide to learn all the mechanics, contraptions, and tips to make your Minecraft creations next level.",
+      "imageText": "Check the Guide",
+      "cta": "GET STARTED"
+    }
   }
 }

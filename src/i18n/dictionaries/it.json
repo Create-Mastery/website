@@ -16,5 +16,19 @@
         "getStarted": "INIZIA ORA",
         "joinCommunity": "UNISCITI ALLA COMMUNITY"
       }
+  },
+  "engagement": {
+    "discord": {
+      "title": "Unisciti al nostro Discord",
+      "paragraph": "Entra a far parte della nostra community — condividi idee, mostra le tue build e chiacchiera con altri creator. Clicca qui sotto per unirti al divertimento",
+      "imageText": "Unisciti al server Discord",
+      "cta": "Unisciti alla community"
+    },
+    "guide": {
+      "title": "Padroneggia il potere dell Create Mod",
+      "paragraph": "Non limitarti alle basi — immergiti nella guida completa per imparare tutte le meccaniche, le contraptions e i consigli che porteranno le tue creazioni di Minecraft al livello successivo.",
+      "imageText": "Consulta la Guida",
+      "cta": "Inizia Subito"
+    }
   }
 }
