@@ -1,0 +1,34 @@
+{
+  "navbar": {
+    "guide": "",
+    "downlad": "",
+    "theme": {
+      "title": "",
+      "dark": "",
+      "light": "",
+      "system": ""
+    }
+  },
+  "hero": {
+    "title": "",
+    "subtitle": "",
+    "cta": {
+      "getStarted": "",
+      "joinCommunity": ""
+    }
+  },
+  "engagement": {
+    "discord": {
+      "title": "",
+      "paragraph": "",
+      "imageText": "",
+      "cta": ""
+    },
+    "guide": {
+      "title": "",
+      "paragraph": "",
+      "imageText": "",
+      "cta": ""
+    }
+  }
+}

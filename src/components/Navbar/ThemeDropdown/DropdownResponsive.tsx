@@ -2,15 +2,15 @@ import { Icon } from '@iconify/react'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { DropdownMenu } from 'radix-ui'
-import { Locale } from '@/i18n/config'
 import { getDictionary } from '@/i18n/get-dictionaries'
+import { locales } from '@/i18n/locales'
 
 const DropdownResponsive = ({
   dictionary,
   lang,
 }: {
   dictionary: Awaited<ReturnType<typeof getDictionary>>['navbar']
-  lang: Locale
+  lang: locales
 }) => {
   const { setTheme } = useTheme()
 

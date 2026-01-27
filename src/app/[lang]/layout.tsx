@@ -7,6 +7,7 @@ import Navbar from '@/components/Navbar/Navbar'
 import { roboto } from '@/fonts'
 import { i18n, type Locale } from '@/i18n/config'
 import { getDictionary } from '@/i18n/get-dictionaries'
+import { locales } from '@/i18n/locales'
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
 export default async function Root(props: {
   children: React.ReactNode
   params: Promise<{
-    lang: Locale
+    lang: locales
   }>
 }) {
   const params = await props.params

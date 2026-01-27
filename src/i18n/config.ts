@@ -1,9 +1,11 @@
+import { locales } from './locales'
+
 export const i18n = {
   defaultLocale: 'en',
   locales: [
     'en',
     'it',
   ],
-} as const
+}
 
-export type Locale = (typeof i18n)['locales'][number]
+export type Locale = Record<locales, () => Promise<unknown>>
