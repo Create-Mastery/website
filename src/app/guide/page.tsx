@@ -1,4 +1,4 @@
-// This is page is for redirecting the use to the page with the correct lang
+// This page is for redirecting the user to the page with the correct lang
 
 import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
