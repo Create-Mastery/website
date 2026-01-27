@@ -4,6 +4,7 @@ import { program } from 'commander'
 import siteInfo from '../package.json'
 import addComponent from './commands/add/component'
 import addLanguage from './commands/add/language'
+import { genSchema } from './commands/generate-schema'
 import printScripts from './commands/scripts'
 import printVersion from './commands/version'
 
@@ -36,5 +37,10 @@ program
   .option('-p, --props', 'the component is generated with props', false)
   .option('-c, --client', 'the component is a client component', false)
   .action((name, options) => addComponent(name, options.props, options.client))
+
+program
+  .command('gen:schema')
+  .description('generates the schema for the dictionaries')
+  .action(() => genSchema())
 
 program.parse()

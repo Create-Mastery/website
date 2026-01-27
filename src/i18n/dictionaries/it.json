@@ -1,4 +1,5 @@
 {
+  "$schema": "./schema.schema.json",
   "navbar": {
     "guide": "GUIDA",
     "downlad": "SCARICA LA MOD",
@@ -12,10 +13,10 @@
   "hero": {
     "title": "Mastera l'arte della Create mod in Minecraft",
     "subtitle": "guide, modpack e consigli per creazioni di livello superiore",
-      "cta": {
-        "getStarted": "INIZIA ORA",
-        "joinCommunity": "UNISCITI ALLA COMMUNITY"
-      }
+    "cta": {
+      "getStarted": "INIZIA ORA",
+      "joinCommunity": "UNISCITI ALLA COMMUNITY"
+    }
   },
   "engagement": {
     "discord": {

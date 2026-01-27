@@ -61,7 +61,7 @@ function genDictionaryLoaders(files: string[]) {
 
   let dictionariesLoaders: string = `import { type Locale } from '../config'\n\nexport const dictionariesLoaders: Locale = {\n`
 
-  for (let dictionary of dictionaries) {
+  for (const dictionary of dictionaries) {
     dictionariesLoaders += `\t${dictionary}: () => import('./${dictionary}.json').then((module) => module.default),\n`
   }
 

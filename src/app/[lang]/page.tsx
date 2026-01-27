@@ -4,7 +4,7 @@ import Link from 'next/link'
 import ImageCard from '@/components/ImageCard'
 import LinkHero from '@/components/LinkHero'
 import { roboto, robotoCondensed } from '@/fonts'
-import { locales } from '@/i18n/types/locales'
+import type { locales } from '@/i18n/types/locales'
 
 export default async function page(props: {
   params: Promise<{

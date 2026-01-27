@@ -16,8 +16,8 @@ export default function printVersion(verbose: boolean) {
   const deps = Object.keys(siteInfo.dependencies).length
   const devDeps = Object.keys(siteInfo.devDependencies).length
 
-  let languages: number = getLanguages()
-  let guides: number = globSync(`${guideDirectory}/**/*.tsx`).length
+  const languages: number = getLanguages()
+  const guides: number = globSync(`${guideDirectory}/**/*.tsx`).length
 
   console.log(chalk.blue(createMasteryASCIIArt))
   console.log(chalk.blue('VERSION   ─'), chalk.reset(siteInfo.version))

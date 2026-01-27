@@ -1,4 +1,5 @@
 {
+  "$schema": "./schema.schema.json",
   "navbar": {
     "guide": "GUIDE",
     "downlad": "DOWNLOAD THE MOD",

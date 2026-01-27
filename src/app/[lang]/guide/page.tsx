@@ -1,5 +1,5 @@
 import { getDictionary } from '@/i18n/get-dictionaries'
-import { locales } from '@/i18n/types/locales'
+import type { locales } from '@/i18n/types/locales'
 
 export default async function page(props: {
   params: Promise<{

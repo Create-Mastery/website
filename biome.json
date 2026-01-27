@@ -6,6 +6,7 @@
       "src/**/*{.ts,.tsx,css}",
       "cli/**/*{.ts}",
       "**/*{.ts}",
+      "**/*{.json}",
       "!node_modules/**/*",
       "!.next/**/*",
       "!.git/**/*"
@@ -17,6 +18,7 @@
       "src/**/*{.ts,.tsx,css}",
       "cli/**/*{.ts}",
       "**/*{.ts}",
+      "**/*{.json}",
       "!node_modules/**/*",
       "!.next/**/*",
       "!.git/**/*"
@@ -27,6 +29,7 @@
       "src/**/*{.ts,.tsx,css}",
       "cli/**/*{.ts}",
       "**/*{.ts}",
+      "**/*{.json}",
       "!node_modules/**/*",
       "!.next/**/*",
       "!.git/**/*"
@@ -83,23 +86,17 @@
       "enabled": false
     }
   },
-  "overrides": [
-    {
-      "includes": [
-        "**/*{.ts,.tsx,css}"
-      ],
-      "linter": {
-        "rules": {
-          "style": {
-            "useConst": "off",
-            "useImportType": "off"
-          },
-          "correctness": {
-            "noUnusedVariables": "off",
-            "noUnusedImports": "off"
-          }
-        }
-      }
+  "json": {
+    "parser": {
+      "allowComments": false,
+      "allowTrailingCommas": false
+    },
+    "formatter": {
+      "enabled": true,
+      "expand": "always"
+    },
+    "linter": {
+      "enabled": true
     }
-  ]
+  }
 }

@@ -2,8 +2,8 @@ import { Icon } from '@iconify/react'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { DropdownMenu } from 'radix-ui'
-import { getDictionary } from '@/i18n/get-dictionaries'
-import { locales } from '@/i18n/types/locales'
+import type { getDictionary } from '@/i18n/get-dictionaries'
+import type { locales } from '@/i18n/types/locales'
 
 const DropdownResponsive = ({
   dictionary,
