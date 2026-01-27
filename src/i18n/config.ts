@@ -1,4 +1,4 @@
-import { locales } from './locales'
-import { type dictionary } from './template'
+import { type dictionary } from './dictionaries/template'
+import { locales } from './types/locales'
 
 export type Locale = Record<locales, () => Promise<dictionary>>

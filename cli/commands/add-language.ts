@@ -64,6 +64,30 @@ function genI18n() {
   fs.writeFileSync(path.resolve(__dirname, '../../src/i18n/i18n.ts'), content)
 }
 
+function genDictionaryLoaders() {
+  const files = fs
+    .readdirSync(dictionarieDir)
+    .filter((f) => f.endsWith('.json'))
+
+  const dictionaries = files.map((f) => f.replace('.json', ''))
+
+  let dictionariesLoaders: string = `import { type Locale } from '../config'\n\nexport const dictionariesLoaders: Locale = {\n`
+
+  for (let dictionary of dictionaries) {
+    dictionariesLoaders += `\t${dictionary}: () => import('./${dictionary}.json').then((module) => module.default),\n`
+  }
+
+  dictionariesLoaders += '}'
+
+  fs.writeFileSync(
+    path.resolve(
+      __dirname,
+      '../../src/i18n/dictionaries/dictionaries-loaders.ts'
+    ),
+    dictionariesLoaders
+  )
+}
+
 export default function addLanguage(language: string) {
   const input = JSON.parse(fs.readFileSync(`${dictionarieDir}/en.json`, 'utf8'))
   const output = stripValues(input)
@@ -74,6 +98,7 @@ export default function addLanguage(language: string) {
   )
 
   i18n.locales.push(language)
+  genDictionaryLoaders()
   genLocales()
   genI18n()
 
@@ -85,6 +110,7 @@ export default function addLanguage(language: string) {
   console.log(chalk.blue('Regenerated files:'))
   console.log('  @/src/i18n/i18n.ts')
   console.log('  @/src/i18n/locales.ts')
+  console.log('  @/src/i18n/dictionaries/dictionaries-loaders.ts')
   console.log()
   console.log(chalk.blue('Now you need to add the actual values to the file!'))
 }

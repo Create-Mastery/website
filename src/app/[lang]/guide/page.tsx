@@ -1,9 +1,9 @@
-import { Locale } from '@/i18n/config'
 import { getDictionary } from '@/i18n/get-dictionaries'
+import { locales } from '@/i18n/types/locales'
 
 export default async function page(props: {
   params: Promise<{
-    lang: Locale
+    lang: locales
   }>
 }) {
   const { lang } = await props.params

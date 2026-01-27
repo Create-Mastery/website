@@ -2,7 +2,7 @@
 
 import { roboto } from '@/fonts'
 import { type getDictionary } from '@/i18n/get-dictionaries'
-import { locales } from '@/i18n/locales'
+import { locales } from '@/i18n/types/locales'
 import ExternalLink from './ExternalLink'
 import InternalLink from './InternalLink'
 import Dropdown from './ThemeDropdown/Dropdown'

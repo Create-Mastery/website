@@ -7,7 +7,7 @@ import Navbar from '@/components/Navbar/Navbar'
 import { roboto } from '@/fonts'
 import { getDictionary } from '@/i18n/get-dictionaries'
 import { i18n } from '@/i18n/i18n'
-import { locales } from '@/i18n/locales'
+import { locales } from '@/i18n/types/locales'
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({

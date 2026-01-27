@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { DropdownMenu } from 'radix-ui'
 import { getDictionary } from '@/i18n/get-dictionaries'
-import { locales } from '@/i18n/locales'
+import { locales } from '@/i18n/types/locales'
 
 const DropdownResponsive = ({
   dictionary,
