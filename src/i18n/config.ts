@@ -1,11 +1,4 @@
 import { locales } from './locales'
+import { type dictionary } from './template'
 
-export const i18n = {
-  defaultLocale: 'en',
-  locales: [
-    'en',
-    'it',
-  ],
-}
-
-export type Locale = Record<locales, () => Promise<unknown>>
+export type Locale = Record<locales, () => Promise<dictionary>>

@@ -2,9 +2,9 @@
 
 import { program } from 'commander'
 import siteInfo from '../package.json'
+import addLanguage from './commands/add-language'
 import printScripts from './commands/scripts'
 import printVersion from './commands/version'
-import addLanguage from './commands/add-language'
 
 program.version(siteInfo.version)
 program.name('cm')

@@ -2,11 +2,11 @@
 
 import { roboto } from '@/fonts'
 import { type getDictionary } from '@/i18n/get-dictionaries'
+import { locales } from '@/i18n/locales'
 import ExternalLink from './ExternalLink'
 import InternalLink from './InternalLink'
 import Dropdown from './ThemeDropdown/Dropdown'
 import DropdownResponsive from './ThemeDropdown/DropdownResponsive'
-import { locales } from '@/i18n/locales'
 
 const Navbar = ({
   dictionary,

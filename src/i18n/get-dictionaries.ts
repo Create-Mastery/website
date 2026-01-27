@@ -5,6 +5,7 @@ import type { locales } from './locales.ts'
 const dictionaries: Locale = {
   en: () => import('./dictionaries/en.json').then((module) => module.default),
   it: () => import('./dictionaries/it.json').then((module) => module.default),
+  de: () => import('./dictionaries/de.json').then((module) => module.default),
 }
 
 export const getDictionary = async (locale: locales) => {

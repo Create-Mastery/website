@@ -5,8 +5,8 @@ import { ThemeProvider } from 'next-themes'
 import CmLogo from '@/components/CreateMasteryLogo'
 import Navbar from '@/components/Navbar/Navbar'
 import { roboto } from '@/fonts'
-import { i18n, type Locale } from '@/i18n/config'
 import { getDictionary } from '@/i18n/get-dictionaries'
+import { i18n } from '@/i18n/i18n'
 import { locales } from '@/i18n/locales'
 
 export async function generateStaticParams() {
