@@ -69,4 +69,5 @@ export default ${finalName}`
     chalk.reset(`${componentName}.tsx`)
   )
   console.log(chalk.blue('Props             -'), chalk.reset(props))
+  console.log(chalk.blue('Client            -'), chalk.reset(client))
 }
