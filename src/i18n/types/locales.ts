@@ -1,1 +1,1 @@
-export type locales = 'de' | 'en' | 'it'
+export type locales = 'en' | 'it'

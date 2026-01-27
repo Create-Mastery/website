@@ -30,9 +30,7 @@ export default async function Root(props: {
   }>
 }) {
   const params = await props.params
-
   const { children } = props
-
   const dictionary = await getDictionary(params.lang)
 
   return (
