@@ -32,25 +32,17 @@ function stripValues(obj: Json): Json {
   return obj
 }
 
-function genLocales() {
-  const files = fs
-    .readdirSync(dictionarieDir)
-    .filter((f) => f.endsWith('.json'))
-
+function genLocales(files: string[]) {
   const locales = files.map((f) => `'${f.replace('.json', '')}'`).join(' | ')
   const content = `export type locales = ${locales}\n`
 
   fs.writeFileSync(
-    path.resolve(__dirname, '../../src/i18n/locales.ts'),
+    path.resolve(__dirname, '../../src/i18n/types/locales.ts'),
     content
   )
 }
 
-function genI18n() {
-  const files = fs
-    .readdirSync(dictionarieDir)
-    .filter((f) => f.endsWith('.json'))
-
+function genI18n(files: string[]) {
   const locales = files
     .map((f) => `'${f.replace('.json', '')}'`)
     .join(',\n\t\t')
@@ -64,11 +56,7 @@ function genI18n() {
   fs.writeFileSync(path.resolve(__dirname, '../../src/i18n/i18n.ts'), content)
 }
 
-function genDictionaryLoaders() {
-  const files = fs
-    .readdirSync(dictionarieDir)
-    .filter((f) => f.endsWith('.json'))
-
+function genDictionaryLoaders(files: string[]) {
   const dictionaries = files.map((f) => f.replace('.json', ''))
 
   let dictionariesLoaders: string = `import { type Locale } from '../config'\n\nexport const dictionariesLoaders: Locale = {\n`
@@ -89,6 +77,20 @@ function genDictionaryLoaders() {
 }
 
 export default function addLanguage(language: string) {
+  const files = fs
+    .readdirSync(dictionarieDir)
+    .filter((f) => f.endsWith('.json'))
+
+  if (files.includes(language)) {
+    console.log(
+      chalk.red('This language:'),
+      chalk.reset(language),
+      chalk.red('already exists')
+    )
+
+    return
+  }
+
   const input = JSON.parse(fs.readFileSync(`${dictionarieDir}/en.json`, 'utf8'))
   const output = stripValues(input)
 
@@ -98,9 +100,9 @@ export default function addLanguage(language: string) {
   )
 
   i18n.locales.push(language)
-  genDictionaryLoaders()
-  genLocales()
-  genI18n()
+  genDictionaryLoaders(files)
+  genLocales(files)
+  genI18n(files)
 
   console.log(chalk.blue('Language       - '), chalk.reset(language))
   console.log(
@@ -109,7 +111,7 @@ export default function addLanguage(language: string) {
   )
   console.log(chalk.blue('Regenerated files:'))
   console.log('  @/src/i18n/i18n.ts')
-  console.log('  @/src/i18n/locales.ts')
+  console.log('  @/src/i18n/types/locales.ts')
   console.log('  @/src/i18n/dictionaries/dictionaries-loaders.ts')
   console.log()
   console.log(chalk.blue('Now you need to add the actual values to the file!'))

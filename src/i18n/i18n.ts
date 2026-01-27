@@ -6,3 +6,4 @@ export const i18n = {
     'it',
   ],
 }
+
