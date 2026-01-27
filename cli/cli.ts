@@ -2,10 +2,10 @@
 
 import { program } from 'commander'
 import siteInfo from '../package.json'
+import addComponent from './commands/add/component'
 import addLanguage from './commands/add/language'
 import printScripts from './commands/scripts'
 import printVersion from './commands/version'
-import addComponent from './commands/add/component'
 
 program.version(siteInfo.version)
 program.name('cm')
@@ -31,7 +31,7 @@ program
 
 program
   .command('add:component')
-  .description('creates a new component')
+  .description('creates a new component (in the src/app/components/ directory)')
   .argument('<name>', 'component to add')
   .option('-p, --props', 'the component is generated with props', false)
   .option('-c, --client', 'the component is a client component', false)

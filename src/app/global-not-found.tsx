@@ -1,5 +1,5 @@
-import LinkHero from '@/components/LinkHero'
 import type { Metadata } from 'next'
+import LinkHero from '@/components/LinkHero'
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
