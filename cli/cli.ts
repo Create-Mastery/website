@@ -2,9 +2,10 @@
 
 import { program } from 'commander'
 import siteInfo from '../package.json'
-import addLanguage from './commands/add-language'
+import addLanguage from './commands/add/language'
 import printScripts from './commands/scripts'
 import printVersion from './commands/version'
+import addComponent from './commands/add/component'
 
 program.version(siteInfo.version)
 program.name('cm')
@@ -27,5 +28,13 @@ program
   .description('creates a new language for i18n')
   .argument('<language>', 'language to add')
   .action((language) => addLanguage(language))
+
+program
+  .command('add:component')
+  .description('creates a new component')
+  .argument('<name>', 'component to add')
+  .option('-p, --props', 'the component is generated with props', false)
+  .option('-c, --client', 'the component is a client component', false)
+  .action((name, options) => addComponent(name, options.props, options.client))
 
 program.parse()
