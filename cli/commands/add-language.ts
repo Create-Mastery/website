@@ -81,7 +81,7 @@ export default function addLanguage(language: string) {
     .readdirSync(dictionarieDir)
     .filter((f) => f.endsWith('.json'))
 
-  if (files.includes(language)) {
+  if (files.includes(`${language}.json`)) {
     console.log(
       chalk.red('This language:'),
       chalk.reset(language),
