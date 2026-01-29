@@ -36,7 +36,7 @@ export default function addComponent(
   if (fs.existsSync(filePath)) {
     console.log(
       chalk.red('The component'),
-      chalk.reset(`${componentName}.tsx`),
+      chalk.reset(`${rawName}.tsx`),
       chalk.red('already exists')
     )
 
