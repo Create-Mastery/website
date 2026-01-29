@@ -8,6 +8,9 @@ import { genSchema } from './commands/generate-schema'
 import printScripts from './commands/scripts'
 import printVersion from './commands/version'
 
+const add = program.command('add').description('add a language or component')
+const gen = program.command('gen').description('generate the dictionary schema')
+
 program.version(siteInfo.version)
 program.name('cm')
 
@@ -24,23 +27,23 @@ program
   .description('display all the available scripts in package.json')
   .action(() => printScripts())
 
-program
-  .command('add:language')
-  .description('creates a new language for i18n')
-  .argument('<language>', 'language to add')
-  .action((language) => addLanguage(language))
+gen
+  .command('schema')
+  .description('generates the schema for the dictionaries')
+  .action(() => genSchema())
 
-program
-  .command('add:component')
+add
+  .command('component')
   .description('creates a new component (in the src/app/components/ directory)')
   .argument('<name>', 'component to add')
   .option('-p, --props', 'the component is generated with props', false)
   .option('-c, --client', 'the component is a client component', false)
   .action((name, options) => addComponent(name, options.props, options.client))
 
-program
-  .command('gen:schema')
-  .description('generates the schema for the dictionaries')
-  .action(() => genSchema())
+add
+  .command('language')
+  .description('creates a new language for i18n')
+  .argument('<language>', 'language to add')
+  .action((language) => addLanguage(language))
 
 program.parse()

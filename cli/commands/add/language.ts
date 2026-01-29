@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import chalk from 'chalk'
-import { i18n } from '@/i18n/i18n'
+import { i18n } from '../../../src/i18n/i18n'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
