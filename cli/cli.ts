@@ -1,18 +1,34 @@
 #!/usr/bin/env tsx
 
 import { program } from 'commander'
+import gradient from 'gradient-string'
 import siteInfo from '../package.json'
 import addComponent from './commands/add/component'
 import addLanguage from './commands/add/language'
 import { genSchema } from './commands/generate-schema'
 import printScripts from './commands/scripts'
 import printVersion from './commands/version'
+import { createMasteryASCIIArtBig } from './utils/arts'
 
 const add = program.command('add').description('add a language or component')
 const gen = program.command('gen').description('generate the dictionary schema')
 
 program.version(siteInfo.version)
 program.name('cm')
+
+program.addHelpText(
+  'beforeAll',
+  gradient([
+    '#8dc4ff',
+    '#bddaff',
+  ]).multiline(createMasteryASCIIArtBig)
+)
+
+program.addHelpText('afterAll', ' ')
+
+program.description(
+  'The official Create Website CLI, created to enhance the DX'
+)
 
 program
   .command('version')

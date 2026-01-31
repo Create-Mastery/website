@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 import chalk from 'chalk'
 import { globSync } from 'glob'
 import siteInfo from '../../package.json'
-import { createMasteryASCIIArt } from '../utils/art'
+import { createMasteryASCIIArtSmall } from '../utils/arts'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -23,7 +23,7 @@ export default function printVersion(verbose: boolean) {
   const languages: number = getLanguages()
   const guides: number = globSync(`${guideDirectory}/**/*.tsx`).length
 
-  console.log(chalk.blue(createMasteryASCIIArt))
+  console.log(chalk.blue(createMasteryASCIIArtSmall))
   console.log(chalk.blue('VERSION   ─'), chalk.reset(siteInfo.version))
   console.log(chalk.blue('GUIDES    ─'), chalk.reset(guides))
   console.log(chalk.blue('LANGUAGES ─'), chalk.reset(languages))
