@@ -2,18 +2,6 @@ import fs from 'node:fs'
 import path from 'node:path'
 import chalk from 'chalk'
 import * as GenerateSchema from 'generate-schema'
-import { findProjectRoot } from '../utils/find-project-root'
-
-const projectRoot = findProjectRoot()
-
-const dictionarieDir = path.resolve(projectRoot ?? '', 'src/i18n/dictionaries/')
-const dictionary = JSON.parse(
-  fs.readFileSync(`${dictionarieDir}/en.json`, 'utf8')
-)
-const schemaPath = path.resolve(
-  projectRoot ?? '',
-  `${dictionarieDir}/schema.schema.json`
-)
 
 interface JsonSchema {
   type: string
@@ -44,7 +32,21 @@ function addRequiredRecursively(
   }
 }
 
-export function genSchema() {
+export function genSchema(projectRoot: string) {
+  const dictionarieDir = path.resolve(
+    projectRoot ?? '',
+    'src/i18n/dictionaries/'
+  )
+
+  const dictionary = JSON.parse(
+    fs.readFileSync(`${dictionarieDir}/en.json`, 'utf8')
+  )
+
+  const schemaPath = path.resolve(
+    projectRoot ?? '',
+    `${dictionarieDir}/schema.schema.json`
+  )
+
   const schema = GenerateSchema.json('dictionary schema', dictionary)
 
   addRequiredRecursively(schema, dictionary)

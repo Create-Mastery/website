@@ -86,7 +86,10 @@ program
 gen
   .command('schema')
   .description('generates the schema for the dictionaries')
-  .action(() => genSchema())
+  .action(() => {
+    const projectRoot = requireProjectRoot()
+    genSchema(projectRoot)
+  })
 
 add
   .command('component')
