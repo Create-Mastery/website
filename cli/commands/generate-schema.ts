@@ -1,18 +1,17 @@
-import * as GenerateSchema from 'generate-schema'
-
 import fs from 'node:fs'
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import chalk from 'chalk'
+import * as GenerateSchema from 'generate-schema'
+import { findProjectRoot } from '../utils/find-project-root'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-const dictionarieDir = path.resolve(__dirname, '../../src/i18n/dictionaries/')
+const projectRoot = findProjectRoot()
+
+const dictionarieDir = path.resolve(projectRoot ?? '', 'src/i18n/dictionaries/')
 const dictionary = JSON.parse(
   fs.readFileSync(`${dictionarieDir}/en.json`, 'utf8')
 )
 const schemaPath = path.resolve(
-  __dirname,
+  projectRoot ?? '',
   `${dictionarieDir}/schema.schema.json`
 )
 

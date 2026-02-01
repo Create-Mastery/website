@@ -1,17 +1,15 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import chalk from 'chalk'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-const componentsDir = path.resolve(__dirname, '../../../src/components/')
 
 export default function addComponent(
   componentName: string,
   props: boolean,
-  client: boolean
+  client: boolean,
+  projectRoot: string
 ) {
+  const componentsDir = path.resolve(projectRoot, 'src/components/')
+
   const filePath = path.resolve(componentsDir, `${componentName}.tsx`)
   const dirPath = path.dirname(filePath)
 

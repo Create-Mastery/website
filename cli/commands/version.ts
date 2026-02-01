@@ -1,30 +1,30 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import chalk from 'chalk'
 import { globSync } from 'glob'
-import siteInfo from '../../package.json'
+import type { PackageJson } from 'type-fest'
 import { createMasteryASCIIArtSmall } from '../utils/arts'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-
-export default function printVersion(verbose: boolean) {
-  const dictionarieDir = path.resolve(__dirname, '../../src/i18n/dictionaries')
-  const guideDirectory = path.resolve(__dirname, '../../src/app/**/guide')
+export default function printVersion(
+  verbose: boolean,
+  cliInfo: PackageJson,
+  projectRoot: string
+) {
+  const dictionarieDir = path.resolve(projectRoot, 'src/i18n/dictionaries')
+  const guideDirectory = path.resolve(projectRoot, 'src/app/**/guide')
 
   // since schema.schema.json is also counted we decrement the value by 1 to get the actual number of languages
   const getLanguages = () =>
     fs.readdirSync(dictionarieDir).filter((f) => f.endsWith('.json')).length - 1
 
-  const deps = Object.keys(siteInfo.dependencies).length
-  const devDeps = Object.keys(siteInfo.devDependencies).length
+  const deps = Object.keys(cliInfo.dependencies ?? '').length
+  const devDeps = Object.keys(cliInfo.devDependencies ?? '').length
 
   const languages: number = getLanguages()
   const guides: number = globSync(`${guideDirectory}/**/*.tsx`).length
 
   console.log(chalk.blue(createMasteryASCIIArtSmall))
-  console.log(chalk.blue('VERSION   ─'), chalk.reset(siteInfo.version))
+  console.log(chalk.blue('VERSION   ─'), chalk.reset(cliInfo.version))
   console.log(chalk.blue('GUIDES    ─'), chalk.reset(guides))
   console.log(chalk.blue('LANGUAGES ─'), chalk.reset(languages))
 

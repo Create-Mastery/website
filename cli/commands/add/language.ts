@@ -1,11 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import chalk from 'chalk'
+import { findProjectRoot } from '../../utils/find-project-root'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-const dictionarieDir = path.resolve(__dirname, '../../../src/i18n/dictionaries')
+const projectRoot = findProjectRoot()
 
 type Json =
   | string
@@ -37,7 +35,7 @@ function genLocales(files: string[]) {
   const content = `export type locales = ${locales}\n`
 
   fs.writeFileSync(
-    path.resolve(__dirname, '../../../src/i18n/types/locales.ts'),
+    path.resolve(projectRoot ?? '', '../../../src/i18n/types/locales.ts'),
     content
   )
 }
@@ -54,7 +52,7 @@ function genI18n(files: string[]) {
 }`
 
   fs.writeFileSync(
-    path.resolve(__dirname, '../../../src/i18n/i18n.ts'),
+    path.resolve(projectRoot ?? '', '../../../src/i18n/i18n.ts'),
     content
   )
 }
@@ -72,7 +70,7 @@ function genDictionaryLoaders(files: string[]) {
 
   fs.writeFileSync(
     path.resolve(
-      __dirname,
+      projectRoot ?? '',
       '../../../src/i18n/dictionaries/dictionaries-loaders.ts'
     ),
     dictionariesLoaders
@@ -80,6 +78,11 @@ function genDictionaryLoaders(files: string[]) {
 }
 
 export default function addLanguage(language: string) {
+  const dictionarieDir = path.resolve(
+    projectRoot ?? '',
+    '../../../src/i18n/dictionaries'
+  )
+
   const input = JSON.parse(fs.readFileSync(`${dictionarieDir}/en.json`, 'utf8'))
   const output = stripValues(input)
 
