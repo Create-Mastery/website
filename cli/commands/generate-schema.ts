@@ -1,4 +1,4 @@
-var GenerateSchema = require('generate-schema')
+import * as GenerateSchema from 'generate-schema'
 
 import fs from 'node:fs'
 import path from 'node:path'

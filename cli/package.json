@@ -1,16 +1,18 @@
 {
-  "name": "create-mastery-cli",
+  "name": "@create-mastery/cli",
   "version": "0.1.0",
-  "author": "Create Mastery",
   "description": "The official Create Website CLI, created to enhance the DX",
-  "license": "GPL-3.0-only",
-  "homepage": "https://github.com/Create-Mastery/website/cli#readme",
-  "bin": {
-    "cm": "./cli.ts"
-  },
+  "homepage": "https://github.com/Create-Mastery/website/tree/main/cli#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Create-Mastery/website/cli.git"
+    "url": "https://github.com/Create-Mastery/website/tree/main/cli.git"
+  },
+  "license": "GPL-3.0-only",
+  "author": "Create Mastery",
+  "type": "module",
+  "main": "./cli.ts",
+  "bin": {
+    "cm": "./cli.ts"
   },
   "dependencies": {
     "gradient-string": "^3.0.0",
