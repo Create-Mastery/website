@@ -2,11 +2,10 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import chalk from 'chalk'
-import { i18n } from '../../../src/i18n/i18n'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-const dictionarieDir = path.resolve(__dirname, '../../src/i18n/dictionaries')
+const dictionarieDir = path.resolve(__dirname, '../../../src/i18n/dictionaries')
 
 type Json =
   | string
@@ -19,13 +18,14 @@ type Json =
     }
 
 function stripValues(obj: Json): Json {
+  if (obj === '$schema') return obj
   if (typeof obj === 'string') return ''
   if (Array.isArray(obj)) return obj.map(stripValues)
   if (typeof obj === 'object' && obj !== null) {
     return Object.fromEntries(
       Object.entries(obj).map(([k, v]) => [
         k,
-        stripValues(v),
+        k === '$schema' ? v : stripValues(v),
       ])
     ) as Json
   }
@@ -37,7 +37,7 @@ function genLocales(files: string[]) {
   const content = `export type locales = ${locales}\n`
 
   fs.writeFileSync(
-    path.resolve(__dirname, '../../src/i18n/types/locales.ts'),
+    path.resolve(__dirname, '../../../src/i18n/types/locales.ts'),
     content
   )
 }
@@ -53,7 +53,10 @@ function genI18n(files: string[]) {
   ],
 }`
 
-  fs.writeFileSync(path.resolve(__dirname, '../../src/i18n/i18n.ts'), content)
+  fs.writeFileSync(
+    path.resolve(__dirname, '../../../src/i18n/i18n.ts'),
+    content
+  )
 }
 
 function genDictionaryLoaders(files: string[]) {
@@ -70,16 +73,21 @@ function genDictionaryLoaders(files: string[]) {
   fs.writeFileSync(
     path.resolve(
       __dirname,
-      '../../src/i18n/dictionaries/dictionaries-loaders.ts'
+      '../../../src/i18n/dictionaries/dictionaries-loaders.ts'
     ),
     dictionariesLoaders
   )
 }
 
 export default function addLanguage(language: string) {
-  const files = fs
+  const input = JSON.parse(fs.readFileSync(`${dictionarieDir}/en.json`, 'utf8'))
+  const output = stripValues(input)
+
+  let files: string[]
+
+  files = fs
     .readdirSync(dictionarieDir)
-    .filter((f) => f.endsWith('.json'))
+    .filter((f) => f.endsWith('.json') && f !== 'schema.schema.json')
 
   if (files.includes(`${language}.json`)) {
     console.log(
@@ -91,15 +99,15 @@ export default function addLanguage(language: string) {
     return
   }
 
-  const input = JSON.parse(fs.readFileSync(`${dictionarieDir}/en.json`, 'utf8'))
-  const output = stripValues(input)
-
   fs.writeFileSync(
     `${dictionarieDir}/${language}.json`,
     JSON.stringify(output, null, 2)
   )
 
-  i18n.locales.push(language)
+  files = fs
+    .readdirSync(dictionarieDir)
+    .filter((f) => f.endsWith('.json') && f !== 'schema.schema.json')
+
   genDictionaryLoaders(files)
   genLocales(files)
   genI18n(files)
