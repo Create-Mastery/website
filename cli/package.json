@@ -5,14 +5,14 @@
   "homepage": "https://github.com/Create-Mastery/website/tree/main/cli#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Create-Mastery/website/tree/main/cli.git"
+    "url": "git+https://github.com/Create-Mastery/website.git#readme"
   },
   "license": "GPL-3.0-only",
   "author": "Create Mastery",
   "type": "module",
   "main": "./cli.ts",
   "bin": {
-    "cm": "./cli.ts"
+    "cm": "cli.ts"
   },
   "dependencies": {
     "gradient-string": "^3.0.0",
