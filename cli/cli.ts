@@ -2,18 +2,20 @@
 
 import { program } from 'commander'
 import gradient from 'gradient-string'
-import siteInfo from '../package.json'
 import addComponent from './commands/add/component'
 import addLanguage from './commands/add/language'
 import { genSchema } from './commands/generate-schema'
 import printScripts from './commands/scripts'
 import printVersion from './commands/version'
+import cliInfo from './package.json'
 import { createMasteryASCIIArtBig } from './utils/arts'
+import { execSync } from 'node:child_process'
+import chalk from 'chalk'
 
 const add = program.command('add').description('add a language or component')
 const gen = program.command('gen').description('generate the dictionary schema')
 
-program.version(siteInfo.version)
+program.version(cliInfo.version)
 program.name('cm')
 
 program.addHelpText(
@@ -24,11 +26,10 @@ program.addHelpText(
   ]).multiline(createMasteryASCIIArtBig)
 )
 
+// I know this may look silly, but it's for creating space between the prompt and the help message
 program.addHelpText('afterAll', ' ')
 
-program.description(
-  'The official Create Website CLI, created to enhance the DX'
-)
+program.description(cliInfo.description)
 
 program
   .command('version')
@@ -42,6 +43,25 @@ program
   .command('scripts')
   .description('display all the available scripts in package.json')
   .action(() => printScripts())
+
+program
+  .command('clone')
+  .description('clone the Create Mastery repo')
+  .argument('<destination>', 'the directory where the repo will be cloned')
+  .action((destination) => {
+    try {
+      execSync(
+        `git clone https://github.com/Create-Mastery/website.git ${destination}`
+      )
+
+      console.log(chalk.blue('repo cloned in:'), destination)
+      console.log(
+        chalk.blue('now run `npm install` to install all the dependencies')
+      )
+    } catch (err) {
+      console.error('an error has occurred:', err)
+    }
+  })
 
 gen
   .command('schema')
