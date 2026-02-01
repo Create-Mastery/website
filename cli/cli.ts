@@ -3,6 +3,7 @@
 import { execSync } from 'node:child_process'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import chalk from 'chalk'
 import { program } from 'commander'
 import gradient from 'gradient-string'
@@ -14,7 +15,6 @@ import printScripts from './commands/scripts'
 import printVersion from './commands/version'
 import { createMasteryASCIIArtBig } from './utils/arts'
 import { requireProjectRoot } from './utils/require-project-root'
-import { fileURLToPath } from 'node:url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -106,6 +106,9 @@ add
   .command('language')
   .description('creates a new language for i18n')
   .argument('<language>', 'language to add')
-  .action((language) => addLanguage(language))
+  .action((language) => {
+    const projectRoot = requireProjectRoot()
+    addLanguage(language, projectRoot)
+  })
 
 program.parse()

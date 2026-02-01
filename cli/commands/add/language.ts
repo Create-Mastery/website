@@ -1,9 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import chalk from 'chalk'
-import { findProjectRoot } from '../../utils/find-project-root'
-
-const projectRoot = findProjectRoot()
 
 type Json =
   | string
@@ -30,17 +27,17 @@ function stripValues(obj: Json): Json {
   return obj
 }
 
-function genLocales(files: string[]) {
+function genLocales(files: string[], projectRoot: string) {
   const locales = files.map((f) => `'${f.replace('.json', '')}'`).join(' | ')
   const content = `export type locales = ${locales}\n`
 
   fs.writeFileSync(
-    path.resolve(projectRoot ?? '', '../../../src/i18n/types/locales.ts'),
+    path.resolve(projectRoot ?? '', 'src/i18n/types/locales.ts'),
     content
   )
 }
 
-function genI18n(files: string[]) {
+function genI18n(files: string[], projectRoot: string) {
   const locales = files
     .map((f) => `'${f.replace('.json', '')}'`)
     .join(',\n\t\t')
@@ -51,13 +48,10 @@ function genI18n(files: string[]) {
   ],
 }`
 
-  fs.writeFileSync(
-    path.resolve(projectRoot ?? '', '../../../src/i18n/i18n.ts'),
-    content
-  )
+  fs.writeFileSync(path.resolve(projectRoot ?? '', 'src/i18n/i18n.ts'), content)
 }
 
-function genDictionaryLoaders(files: string[]) {
+function genDictionaryLoaders(files: string[], projectRoot: string) {
   const dictionaries = files.map((f) => f.replace('.json', ''))
 
   let dictionariesLoaders: string = `import { type Locale } from '../config'\n\nexport const dictionariesLoaders: Locale = {\n`
@@ -71,16 +65,16 @@ function genDictionaryLoaders(files: string[]) {
   fs.writeFileSync(
     path.resolve(
       projectRoot ?? '',
-      '../../../src/i18n/dictionaries/dictionaries-loaders.ts'
+      'src/i18n/dictionaries/dictionaries-loaders.ts'
     ),
     dictionariesLoaders
   )
 }
 
-export default function addLanguage(language: string) {
+export default function addLanguage(language: string, projectRoot: string) {
   const dictionarieDir = path.resolve(
     projectRoot ?? '',
-    '../../../src/i18n/dictionaries'
+    'src/i18n/dictionaries'
   )
 
   const input = JSON.parse(fs.readFileSync(`${dictionarieDir}/en.json`, 'utf8'))
@@ -111,9 +105,9 @@ export default function addLanguage(language: string) {
     .readdirSync(dictionarieDir)
     .filter((f) => f.endsWith('.json') && f !== 'schema.schema.json')
 
-  genDictionaryLoaders(files)
-  genLocales(files)
-  genI18n(files)
+  genDictionaryLoaders(files, projectRoot)
+  genLocales(files, projectRoot)
+  genI18n(files, projectRoot)
 
   console.log(chalk.blue('Language       - '), chalk.reset(language))
   console.log(
