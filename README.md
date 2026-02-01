@@ -10,21 +10,20 @@ The official website of Create Mastery
 
 ## Create Mastery CLI
 
-The Create Mastery website comes with a CLI (currently under development) to help with website development.
+We've created the Create Mastery CLI, a tool made for enhancing the DX
 
-### Getting Started
-
-To make the CLI runnable, run the following commands:
+You can install it thru `npm`:
 
 ```sh
-# Install tsx globally (required to run the CLI)
-npm install -g tsx
+npm install -g tsx # the CLI is made with typescript, so tsx is required
 
-# Link the CLI locally
-npm link
+npm install -g @create-mastery/cli # install the actual CLI
+```
 
-# Test it!
-cm version
+If you haven't cloned the repo you can't do anything, clone the repo with:
+
+```sh
+cm clone path/to/destination
 ```
 
 ## License
