@@ -31,5 +31,10 @@
       "imageText": "Consulta la Guida",
       "cta": "Inizia Subito"
     }
+  },
+  "guide": {
+    "sidebar": {
+      "introduction": "INTRODUZIONE"
+    }
   }
 }

@@ -130,11 +130,31 @@
         "discord",
         "guide"
       ]
+    },
+    "guide": {
+      "type": "object",
+      "properties": {
+        "sidebar": {
+          "type": "object",
+          "properties": {
+            "introduction": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "introduction"
+          ]
+        }
+      },
+      "required": [
+        "sidebar"
+      ]
     }
   },
   "required": [
     "navbar",
     "hero",
-    "engagement"
+    "engagement",
+    "guide"
   ]
 }

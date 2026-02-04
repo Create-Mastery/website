@@ -31,4 +31,9 @@ export type dictionary = {
       cta: string
     }
   }
+  guide: {
+    sidebar: {
+      introduction: string
+    }
+  }
 }

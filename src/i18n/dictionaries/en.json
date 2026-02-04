@@ -31,5 +31,10 @@
       "imageText": "Check the Guide",
       "cta": "GET STARTED"
     }
+  },
+  "guide": {
+    "sidebar": {
+      "introduction": "INTRODUCTION"
+    }
   }
 }

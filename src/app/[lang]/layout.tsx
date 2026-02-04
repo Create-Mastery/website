@@ -64,7 +64,7 @@ export default async function Root(props: {
             />
           </header>
 
-          <main className='flex-1 bg-stone-100 dark:bg-stone-900'>
+          <main className='flex flex-1 items-start bg-stone-100 dark:bg-stone-900'>
             {children}
           </main>
         </ThemeProvider>
