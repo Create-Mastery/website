@@ -1,7 +1,7 @@
-export type dictionary = {
+export type Dictionary = {
   navbar: {
     guide: string
-    downlad: string
+    download: string
     theme: {
       title: string
       dark: string

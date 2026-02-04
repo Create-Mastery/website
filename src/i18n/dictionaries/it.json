@@ -2,7 +2,7 @@
   "$schema": "./schema.schema.json",
   "navbar": {
     "guide": "GUIDA",
-    "downlad": "SCARICA LA MOD",
+    "download": "SCARICA LA MOD",
     "theme": {
       "title": "TEMA",
       "dark": "SCURO",

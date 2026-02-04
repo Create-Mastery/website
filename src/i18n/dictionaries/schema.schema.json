@@ -1,160 +1,161 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "dictionary schema",
-  "type": "object",
-  "properties": {
-    "$schema": {
-      "type": "string"
-    },
-    "navbar": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/Dictionary",
+  "definitions": {
+    "Dictionary": {
       "type": "object",
       "properties": {
-        "guide": {
-          "type": "string"
+        "navbar": {
+          "type": "object",
+          "properties": {
+            "guide": {
+              "type": "string"
+            },
+            "download": {
+              "type": "string"
+            },
+            "theme": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "dark": {
+                  "type": "string"
+                },
+                "light": {
+                  "type": "string"
+                },
+                "system": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "dark",
+                "light",
+                "system"
+              ]
+            }
+          },
+          "required": [
+            "guide",
+            "download",
+            "theme"
+          ]
         },
-        "downlad": {
-          "type": "string"
-        },
-        "theme": {
+        "hero": {
           "type": "object",
           "properties": {
             "title": {
               "type": "string"
             },
-            "dark": {
-              "type": "string"
-            },
-            "light": {
-              "type": "string"
-            },
-            "system": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "title",
-            "dark",
-            "light",
-            "system"
-          ]
-        }
-      },
-      "required": [
-        "guide",
-        "downlad",
-        "theme"
-      ]
-    },
-    "hero": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string"
-        },
-        "subtitle": {
-          "type": "string"
-        },
-        "cta": {
-          "type": "object",
-          "properties": {
-            "getStarted": {
-              "type": "string"
-            },
-            "joinCommunity": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "getStarted",
-            "joinCommunity"
-          ]
-        }
-      },
-      "required": [
-        "title",
-        "subtitle",
-        "cta"
-      ]
-    },
-    "engagement": {
-      "type": "object",
-      "properties": {
-        "discord": {
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": "string"
-            },
-            "paragraph": {
-              "type": "string"
-            },
-            "imageText": {
+            "subtitle": {
               "type": "string"
             },
             "cta": {
-              "type": "string"
+              "type": "object",
+              "properties": {
+                "getStarted": {
+                  "type": "string"
+                },
+                "joinCommunity": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "getStarted",
+                "joinCommunity"
+              ]
             }
           },
           "required": [
             "title",
-            "paragraph",
-            "imageText",
+            "subtitle",
             "cta"
+          ]
+        },
+        "engagement": {
+          "type": "object",
+          "properties": {
+            "discord": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "paragraph": {
+                  "type": "string"
+                },
+                "imageText": {
+                  "type": "string"
+                },
+                "cta": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "paragraph",
+                "imageText",
+                "cta"
+              ]
+            },
+            "guide": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "paragraph": {
+                  "type": "string"
+                },
+                "imageText": {
+                  "type": "string"
+                },
+                "cta": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "paragraph",
+                "imageText",
+                "cta"
+              ]
+            }
+          },
+          "required": [
+            "discord",
+            "guide"
           ]
         },
         "guide": {
           "type": "object",
           "properties": {
-            "title": {
-              "type": "string"
-            },
-            "paragraph": {
-              "type": "string"
-            },
-            "imageText": {
-              "type": "string"
-            },
-            "cta": {
-              "type": "string"
+            "sidebar": {
+              "type": "object",
+              "properties": {
+                "introduction": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "introduction"
+              ]
             }
           },
           "required": [
-            "title",
-            "paragraph",
-            "imageText",
-            "cta"
+            "sidebar"
           ]
         }
       },
       "required": [
-        "discord",
+        "navbar",
+        "hero",
+        "engagement",
         "guide"
       ]
-    },
-    "guide": {
-      "type": "object",
-      "properties": {
-        "sidebar": {
-          "type": "object",
-          "properties": {
-            "introduction": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "introduction"
-          ]
-        }
-      },
-      "required": [
-        "sidebar"
-      ]
     }
-  },
-  "required": [
-    "navbar",
-    "hero",
-    "engagement",
-    "guide"
-  ]
+  }
 }

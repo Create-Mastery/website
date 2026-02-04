@@ -2,7 +2,7 @@
 
 import { roboto } from '@/fonts'
 import type { getDictionary } from '@/i18n/get-dictionaries'
-import type { locales } from '@/i18n/types/locales'
+import type { Locales } from '@/i18n/types/locales'
 import ExternalLink from './ExternalLink'
 import InternalLink from './InternalLink'
 import Dropdown from './ThemeDropdown/Dropdown'
@@ -13,7 +13,7 @@ const Navbar = ({
   lang,
 }: {
   dictionary: Awaited<ReturnType<typeof getDictionary>>['navbar']
-  lang: locales
+  lang: Locales
 }) => {
   return (
     <>
@@ -29,7 +29,7 @@ const Navbar = ({
             </li>
             <li>
               <ExternalLink link='https://www.curseforge.com/minecraft/mc-mods/create'>
-                <span className='pr-px pl-1'>{dictionary.downlad}</span>
+                <span className='pr-px pl-1'>{dictionary.download}</span>
               </ExternalLink>
             </li>
           </div>
